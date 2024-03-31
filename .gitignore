@@ -1,10 +1,13 @@
 #
 config.py
 test.py
-Test2.ipynb
+Visualisierung.ipynb
 .ipynb_checkpoints/
 __pycache__/
 movies_dataset.pk
 movies_dataset.csv
 movies_metadata.csv
 first_venv/
+einbetten/
+bilder/
+utils/

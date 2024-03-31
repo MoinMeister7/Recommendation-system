@@ -15,7 +15,6 @@ def get_movie(language, count):
         try:
             #URL Anfrage
             res = requests.get(f"{url}&page={str(page)}")
-
         except:
             raise ("not connected to internet or movidb issue")
         #Fehler abfangen
@@ -25,7 +24,7 @@ def get_movie(language, count):
         #Rückgabeformat Json
         res = res.json()
 
-        if "errors" in res.key():
+        if "errors" in res.keys():
             print("api error")
             return movies
         
@@ -41,7 +40,7 @@ def get_movie(language, count):
     return movies
 #Sprache, in der die Infos dargestellt werden -> können mehrere Angegebn werden
 language_count = {
-    "en-US":10000
+    "en-US":100
 }
 all_movies = []
 for key in language_count:
@@ -52,7 +51,7 @@ for key in language_count:
 
 #Dataframe erstellen und Spalten umbennen
 df = pd.DataFrame(all_movies, columns=['genre_ids', 'id', 'original_language',
-       'overview', 'popularity', 'release_date', 'title', 'vote_average', 'vote_count'])
+       'overview', 'popularity', 'release_date', 'title', 'vote_average', 'vote_count',"poster_path"])
 #In CSV Datei umwandeln ohne Index
 df.to_csv('movies_dataset.csv', index=False)
 #Pickle ist ein Dateiformat in Python, das es ermöglicht, Python-Objekte (wie DataFrames) in binärer Form zu speichern
