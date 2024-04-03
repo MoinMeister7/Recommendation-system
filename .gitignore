@@ -2,6 +2,7 @@
 config.py
 test.py
 Visualisierung.ipynb
+Recommender.ipynb
 .ipynb_checkpoints/
 __pycache__/
 movies_dataset.pk
@@ -11,3 +12,4 @@ first_venv/
 einbetten/
 bilder/
 utils/
+df_genre.csv

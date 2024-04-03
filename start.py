@@ -5,9 +5,9 @@ import os
 def start():#Stichpunkte
     st.header("Definition: ")
     markdown_text = """
-    - Erster Punkt
-    - Zweiter Punkt
-    - Dritter Punkt
+    - allgemeine Empfehlungen auf Grundlage von Eigenschaften, Populariät und Bewertungen 
+    - sagen Bewertungen/Vorlieben von Nutzern vorraus
+    - Unternehmen (insbesonders ihr fianzieller Erfolg) sind abhängig von der Effektivität dieser Algorithmen
     """
     st.markdown(markdown_text)
     #Bilder-Verzeichnis einlesen
@@ -15,7 +15,10 @@ def start():#Stichpunkte
     #Dateinnamen als Liste in Variable speichern 
     dateien = os.listdir(bild_verzeichnis)
     anzahl_bilder = len(dateien)
-
+    #Trennlinie
+    st.markdown(
+    """<hr style="border-top: 4px solid white;">""",
+    unsafe_allow_html=True)
     # Seitenindex aktualisieren
     if st.button("Vorheriges Bild") and st.session_state.seiten_index > 0:
         st.session_state.seiten_index -= 1

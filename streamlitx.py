@@ -1,6 +1,7 @@
 import streamlit as st
 import start
 import data_vizu
+import basic_recommender
 
 #Grundeinstellungen
 st.set_page_config(page_title = "Filmempfehlungen",
@@ -27,7 +28,7 @@ st.info("Dies ist ein kurzes Python Projekt, um die gelernten Ansätze der Weite
 pages = {
     "1. Start": start,
     "2. Datenanalyse und -visualisierung": data_vizu,
-    "3. Einführung in die Theorie der Empfehlungssysteme": 3,
+    "3. Allgemeine Empfehlungen": basic_recommender,
     "4. Empfehlungssysteme": 4,
     "5. Fazit": 5,
 }

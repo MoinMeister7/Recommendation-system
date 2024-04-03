@@ -16,10 +16,10 @@ def get_movie(language, count):
             #URL Anfrage
             res = requests.get(f"{url}&page={str(page)}")
         except:
-            raise ("not connected to internet or movidb issue")
+            raise ("Keine Verbindung zum Internet oder zur Movie Db")
         #Fehler abfangen
         if res.status_code != 200:
-            print("error")
+            print("Fehler")
             return []
         #Rückgabeformat Json
         res = res.json()
