@@ -41,17 +41,22 @@ def start():
                 with cols[i]:
                     st.write(f'<b style="color:#FFFFFF"> {table["title"].iloc[i]} </b>',unsafe_allow_html=True)
                     bild_pfad = api_request(table["id"].iloc[i])
-                    bild_pfad= "http://image.tmdb.org/t/p/w500/" + bild_pfad
+                    if isinstance(bild_pfad, str):
+                        bild_pfad= "http://image.tmdb.org/t/p/w500/" + bild_pfad
+                    else:
+                        bild_pfad = "einbetten/x.jpg"
                     st.image(bild_pfad)
                     st.write("________")
-                    st.write(f'<b style="color:#FFFFFF">Rating</b>:<b> {table["vote_average"].iloc[i]}</b>',unsafe_allow_html=True)
-                    st.write(f'<b style="color:#FFFFFF">Votes</b>: <b> {table["vote_count"].iloc[i]}<b>',unsafe_allow_html=True)
+                    st.write(f'<b style="color:#FFFFFF">Bewertungen:</b>:<b> {table["vote_average"].iloc[i]}</b>',unsafe_allow_html=True)
+                    st.write(f'<b style="color:#FFFFFF">Stimmen:</b>: <b> {table["vote_count"].iloc[i]}<b>',unsafe_allow_html=True)
     
         #Trennlinie
         st.markdown(
         """<hr style="border-top: 4px solid white;">""",
         unsafe_allow_html=True)
         #Grafik
+        st.subheader("Bekannheit Score:")
+        table["popularity"] = table["popularity"].astype("float")
         popularity = table.sort_values("popularity", ascending=False)
         plt.figure(figsize=(16,8))
         plt.barh(popularity["title"],popularity["popularity"], align="center")
