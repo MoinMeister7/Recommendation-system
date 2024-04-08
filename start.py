@@ -5,11 +5,11 @@ import os
 def start():#Stichpunkte
     st.header("Definition: ")
     markdown_text = """
-    - allgemeine Empfehlungen auf Grundlage von Eigenschaften, Populariät und Bewertungen 
-    - sagen Bewertungen/Vorlieben von Nutzern vorraus
-    - Unternehmen (insbesonders ihr fianzieller Erfolg) sind abhängig von der Effektivität dieser Algorithmen
+    <h6>- Empfehlungen auf Grundlage von Eigenschaften, Nutzungsverhalten, Populariät und Bewertungen</h6>
+    <h6>- sagen Bewertungen/Vorlieben von Nutzern vorraus</h6>
+    <h6>- Unternehmen (insbesonders ihr fianzieller Erfolg) sind abhängig von der Effektivität dieser Algorithmen</h6>
     """
-    st.markdown(markdown_text)
+    st.markdown(markdown_text, unsafe_allow_html=True)
     #Bilder-Verzeichnis einlesen
     bild_verzeichnis = "bilder"
     #Dateinnamen als Liste in Variable speichern 

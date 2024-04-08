@@ -2,6 +2,8 @@ import streamlit as st
 import start
 import data_vizu
 import basic_recommender
+import content_based_recom
+import fazit
 
 #Grundeinstellungen
 st.set_page_config(page_title = "Filmempfehlungen",
@@ -29,8 +31,8 @@ pages = {
     "1. Start": start,
     "2. Datenanalyse und -visualisierung": data_vizu,
     "3. Allgemeine Empfehlungen": basic_recommender,
-    "4. Empfehlungssysteme": 4,
-    "5. Fazit": 5,
+    "4. Content Based Filtering": content_based_recom,
+    "5. Fazit": fazit,
 }
 
 st.sidebar.title("Seiten")

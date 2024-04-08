@@ -18,12 +18,23 @@ def start():
     unsafe_allow_html=True)
     #Beschreibung
     st.subheader("Beschreibung:")
-    markdown_text = """
-    - allgemeine Empfehlungen -> Filme werden auf Grundlage von Popularität/Bewertungen sotriert und die Top 'x' angezeigt
-    - Genre kann als Zusatz angegeben werden
-    """
-    st.markdown(markdown_text)
+    col1,col2 = st.columns(2)
+    with col1:
+        st.image("einbetten/pop_recommendation.png",caption="Beispiel")
+    with col2:
+        markdown_text = """
+        <h5> - allgemeine Empfehlungen für jeden Nutzer unabhängig von seinen persönlichen Präferenzen</h5>
+        <h5> - Filme werden auf Grundlage von Popularität/Bewertungen sortiert und die Top 'x' angezeigt</h5>
+        <h5> - Genre kann als zustäzlicher Filter mit angegeben werden</h5>
+        <h5> - Nach Formel: </h5>"""
+        st.markdown(markdown_text, unsafe_allow_html=True)
+        st.latex(r"\text{GW} = \left(\frac{v}{v+m}\right) \cdot R + \left(\frac{m}{v+m}\right) \cdot C")
+    #Trennlinie
+    st.markdown(
+    """<hr style="border-top: 4px solid white;">""",
+    unsafe_allow_html=True)
     #Ausklappen
+    st.subheader("Empfehlungen:")
     expander = st.expander("Klick mich 🎉👌")
     select_genre = expander.selectbox("Wählen Sie das Genre aus", ("Alle", "Action", "Comedy", "Fantasy", "Horror", "Science Fiction"))
     selecht_quantil= expander.selectbox("Wählen Sie die Mindestanzahl an Stimmen für die Auflistung aus", ("0.8", "0.85", "0.9", "0.95"))
@@ -91,11 +102,11 @@ def start():
         with tab3:
             st.subheader("Zusammenfasssung")
             text = """
-                - allgemeine Übersicht der empfohlenen Filme für alle Nutzer
-                - triviale Implementierungen
-                - vereinfachter Ansatz, da jeder Nutzer individuelle Vorlieben hat und diese nicht berücksichtigt werden
+                <h6>- allgemeine Übersicht der empfohlenen Filme für alle Nutzer</h6>
+                <h6>- triviale Implementierungen</h6>
+                <h6>- vereinfachter Ansatz, da jeder Nutzer individuelle Vorlieben hat und diese nicht berücksichtigt werden</h6>
                 """
-            st.write(text)
+            st.markdown(text, unsafe_allow_html=True)
 ###########################################
 
 #Hilfsfunktionen
