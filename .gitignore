@@ -17,3 +17,6 @@ links_small.csv
 keywords.csv
 credits.csv
 df_content_based_soup.csv
+ratings_small.csv
+PyWhatKit_DB.txt
+collabo_filtering.ipynb

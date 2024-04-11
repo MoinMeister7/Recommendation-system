@@ -3,7 +3,8 @@ import start
 import data_vizu
 import basic_recommender
 import content_based_recom
-import fazit
+import kalender
+import collab_filt
 
 #Grundeinstellungen
 st.set_page_config(page_title = "Filmempfehlungen",
@@ -32,7 +33,8 @@ pages = {
     "2. Datenanalyse und -visualisierung": data_vizu,
     "3. Allgemeine Empfehlungen": basic_recommender,
     "4. Content Based Filtering": content_based_recom,
-    "5. Fazit": fazit,
+    "5. Collaborative Filtering": collab_filt,
+    "6. Kalender": kalender,
 }
 
 st.sidebar.title("Seiten")
